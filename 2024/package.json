@@ -14,5 +14,8 @@
     "@tsconfig/node18": "^18.2.4",
     "@types/node": "^22.10.1",
     "tsx": "^4.19.2"
+  },
+  "dependencies": {
+    "ts-pattern": "^5.5.0"
   }
 }
