@@ -6,7 +6,7 @@ import pt2 from "./pt2";
 type Input = [Array<number>, Array<number>];
 
 export function run() {
-  const input = readFile("day01/input.txt")
+  const input = readFile("01/input.txt")
     .trim()
     .split("\n")
     .map((line) => line.trim().split(/\s+/).map(Number))

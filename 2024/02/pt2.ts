@@ -1,7 +1,7 @@
 import { parseSafeReport } from "./parse-safe-report";
 
 export default function main(input: Array<Array<number>>) {
-  const result = input.reduce((acc, curr) => {
+  return input.reduce((acc, curr) => {
     const safe = parseSafeReport(curr);
 
     if (safe) return acc + 1;
@@ -15,6 +15,4 @@ export default function main(input: Array<Array<number>>) {
 
     return acc;
   }, 0);
-
-  return result;
 }
