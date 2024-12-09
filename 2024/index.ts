@@ -5,6 +5,7 @@ import * as day04 from "./04";
 import * as day05 from "./05";
 import * as day06 from "./06";
 import * as day07 from "./07";
+import * as day08 from "./08";
 
 // console.log(day01.run());
 // console.log(day02.run());
@@ -12,4 +13,5 @@ import * as day07 from "./07";
 // console.log(day04.run());
 // console.log(day05.run());
 // console.log(day06.run());
-console.log(day07.run());
+// console.log(day07.run());
+console.log(day08.run());
