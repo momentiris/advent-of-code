@@ -32,31 +32,36 @@ function checksum(program: Program) {
 }
 
 function move(program: Program): Program {
-  const result = Array.from(program);
+  const number_groups = Array.from(program.join("").matchAll(/(\d)\1*/g)).map(
+    (v) => ({ value: v[0], index: v.index })
+  );
+  const moves = number_groups.sort((a, b) => {
+    // Extract the file IDs as numbers
+    const fileIdA = Number(a.value[0]);
+    const fileIdB = Number(b.value[0]);
+    return fileIdB - fileIdA; // descending order
+  });
+  return m(moves, Array.from(program));
+}
 
-  let num_dots = result.filter((v) => v === ".").length;
-  let count = 0;
+function m(moves: Array<{ value: string; index: number }>, result: Program) {
+  let i = 0;
 
-  while (count < num_dots) {
-    const next_to_move = Array.from(result.join("").matchAll(/(\d)\1+/g)).at(
-      -1
-    );
+  while (i < moves.length) {
+    const move = moves[i];
 
-    const reg = new RegExp(
-      `\(${Array.from({ length: next_to_move[0].length }).fill(".").join("")})`
-    );
-    console.log("..".match(reg));
+    const space_of_matching_size = Array.from(
+      result.join("").matchAll(new RegExp(`\\.{${move.value.length},}`, "g"))
+    ).find((v) => v.index < move.index);
 
-    const space_of_matching_size = result.join("").match(reg);
+    if (space_of_matching_size) {
+      for (let j = 0; j < move.value.length; j++) {
+        result[move.index + j] = ".";
+        result[space_of_matching_size.index! + j] = move.value[0];
+      }
+    }
 
-    // console.log({ space_of_matching_size });
-
-    const first_dot = result.findIndex((v) => v === ".");
-
-    result[first_dot] = result[next_to_move];
-    result[next_to_move] = ".";
-    count++;
-    console.log(result.join(""));
+    i++;
   }
 
   return result;
