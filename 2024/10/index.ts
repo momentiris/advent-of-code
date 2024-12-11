@@ -9,5 +9,5 @@ export function run() {
     .split("\n")
     .map((v) => v.split("").map(Number));
 
-  return [pt1(input)];
+  return [pt1(input), pt2(input)];
 }

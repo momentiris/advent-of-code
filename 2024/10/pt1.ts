@@ -19,6 +19,7 @@ export default function main(input: Input) {
   return result;
 }
 
+// This was actually my first attempted solution for part 1 lol
 function findPaths(map: Input, [x, y]: [number, number]) {
   const current = map[x]?.[y];
   if (current === undefined) {
