@@ -9,6 +9,8 @@ import * as day08 from "./08";
 import * as day09 from "./09";
 import * as day10 from "./10";
 import * as day11 from "./11";
+import * as day12 from "./12";
+import * as day13 from "./13";
 
 // console.log(day01.run());
 // console.log(day02.run());
@@ -19,4 +21,5 @@ import * as day11 from "./11";
 // console.log(day07.run());
 // console.log(day08.run());
 // console.log(day09.run());
-console.log(day11.run());
+// console.log(day12.run());
+console.log(day13.run());
