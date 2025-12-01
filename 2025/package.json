@@ -1,0 +1,21 @@
+{
+  "name": "2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ts-pattern": "^5.9.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "20.1.8",
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2"
+  }
+}
